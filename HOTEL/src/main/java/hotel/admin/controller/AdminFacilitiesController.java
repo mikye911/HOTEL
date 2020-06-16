@@ -20,8 +20,9 @@ import hotel.common.logger.LoggerAspect;
 public class AdminFacilitiesController {
 	Logger log = Logger.getLogger(this.getClass());
 	
-	@Resource(name="AdminFacilitiesService")
+	@Resource(name="AdminFacilitiesService") 
 	private AdminFacilitiesService adminFacilitiesService;
+	
 	
 	//부대시설 목록 조회
 	@RequestMapping(value="/admin/facilitiesList")
