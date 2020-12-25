@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/adminCommon.css'/>" />
@@ -11,7 +10,7 @@
 <%@include file="/WEB-INF/include/mata.jsp" %>
 <style>
 </style>
-<title>부대시설 리스트</title>
+<title>부대시설 목록</title>
 <body class="hold-transition sidebar-mini layout-fixed"><!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -30,7 +29,7 @@
      <div class="col-12">
    <div class="card">
     <div class="card-header">
-                <h3 class="card-title">부대시설 리스트</h3>
+                <h3 class="card-title">부대시설 목록</h3>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 400px;">
                   	<select id="searchOption" size="1">
@@ -120,7 +119,6 @@
 			var total = data.TOTAL;
 			//alert(total); //총 게시글 개수
 			var body = $("table[name='facList'] > tbody");
-			//alert(body);
 			body.empty();
 			if (total == 0) {
 				var str = "<tr><td colspan='5' align='center'>조회된 결과가 없습니다.</td></tr>";
@@ -136,27 +134,26 @@
 				gfn_renderPaging(params);
 
 				var str = "";
-				$.each(data.list,
-								function(key, value) {
-									str += "<tr>"
-											+ "<td>"
-											+ value.RNUM
-											+ "</td>"
-											+ "<td>"
-											+ value.FAC_HOTEL_TYPE
-											+ "</td>"
-											+ "<td>"
-											+ "<a href='#this' name='title'>"
-											+ value.FAC_HOTEL_NAME
-											+ "</a>"
-											+ "<input type='hidden' name='title' value=" + value.FAC_HOTEL_ID + ">"
-											+ "</td>" + "<td>"
-											+ value.FAC_HOTEL_LOCATION
-											+ "</td>" + "<td>"
-											+ value.FAC_HOTEL_TIME + "</td>"
-											+ "<td>" + value.FAC_HOTEL_PHONE
-											+ "</td>" + "</tr>";
-								});
+				$.each(data.list, function(key, value) {
+					str += "<tr>"
+						+ "<td>"
+						+ value.RNUM
+						+ "</td>"
+						+ "<td>"
+						+ value.FAC_HOTEL_TYPE
+						+ "</td>"
+						+ "<td>"
+						+ "<a href='#this' name='title'>"
+						+ value.FAC_HOTEL_NAME
+						+ "</a>"
+						+ "<input type='hidden' name='title' value=" + value.FAC_HOTEL_ID + ">"
+						+ "</td>" + "<td>"
+						+ value.FAC_HOTEL_LOCATION
+						+ "</td>" + "<td>"
+						+ value.FAC_HOTEL_TIME + "</td>"
+						+ "<td>" + value.FAC_HOTEL_PHONE
+						+ "</td>" + "</tr>";
+				});
 				//이거 넣어야 데이터 들어감
 				body.append(str);
 

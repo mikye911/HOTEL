@@ -93,10 +93,10 @@
 		</colgroup>
 		<thead>
 			<tr>
-				<th scope="col">체크인</th>
-				<th scope="col">체크아웃</th>
-				<th scope="col">성인</th>
-				<th scope="col">어린이</th>
+				<th scope="col">Check In</th>
+				<th scope="col">Check Out</th>
+				<th scope="col">Adults</th>
+				<th scope="col">Children</th>
 				<th scope="col"></th>
 			</tr>
 		</thead>
@@ -162,7 +162,7 @@
 				</td>
 				
 				<td>
-					<a href="#this" class="searchBtn" name="search">검색</a>
+					<a href="#this" class="searchBtn" name="search">Search</a>
 					<%@include file="/WEB-INF/include/include-body.jspf"%>
 				</td>
 			</tr>
@@ -236,8 +236,8 @@ function initMap() {
 			var stat = $('#person_adult').attr('value');
 			var num = parseInt(stat,10);
 			num++;
-			if(num>2){
-				num=2;
+			if(num>3){
+				num=3;
 			}
 			$('#person_adult').attr('value',num);
 		});

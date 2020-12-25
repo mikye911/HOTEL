@@ -12,7 +12,7 @@
 
 <%@include file="/WEB-INF/include/mata.jsp" %>
 
-<body class="hold-transition sidebar-mini layout-fixed"><!-- Site wrapper -->
+<body class="hold-transition sidebar-mini layout-fixed"><!-- Site wrapper-->
 <div class="wrapper">
   <!-- Navbar -->
   <%@include file="/WEB-INF/include/navbar.jsp" %>
@@ -33,7 +33,7 @@
     <!-- /.card-header -->
     
     <!-- form start -->
-    <form class="form-horizontal" id="frm" name="frm" action="<c:url value='/adminNoticeWrite'/>" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" id="frm" name="frm"  method="post" enctype="multipart/form-data">
     	<div class="card-body">
         	<div class="form-group row">
             	<label for="inputEmail3" class="col-sm-2 col-form-label">부대시설 타입</label>
@@ -76,13 +76,6 @@
 	            </div>
             </div>
                   
-               <!--    <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">시설 정보</label>
-                    <div class="col-sm-10">
-                       <textarea class="form-control" rows="5" id="FAC_HOTEL_FAC" name="FAC_HOTEL_FAC" ></textarea>
-                    </div>
-                   </div> -->
-                   
              <div class="form-group row">
 	             <label for="inputEmail3" class="col-sm-2 col-form-label">시설 정보</label>
 	             <div class="col-sm-10">
@@ -150,11 +143,7 @@
 
 
 </div>
-
-
-
-	
-  </div>    
+</div>    
 </div>
 <%@include file="/WEB-INF/include/footer.jsp" %>
 <!-- jQuery -->

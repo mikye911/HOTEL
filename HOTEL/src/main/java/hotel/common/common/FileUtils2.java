@@ -21,19 +21,15 @@ public class FileUtils2 { //파일을 특정 폴더에 저장하고 DB에 입력
 	
 	
 	//HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-    
-	
-	//private static final String filePath ="C:\\Users\\UploadFile\\"; //파일이 저장될 위치 선언
 	//private static String filePath = request.getSession().getServletContext().getRealPath("")+"\\resources\\"; //파일이 저장될 위치 선언
-
 	//String imagePath = request.getSession().getServletContext().getRealPath("")+"\\resources\\";
 
 	
 	public  List<Map<String, Object>> parseInsertFileInfo(Map<String, Object>
 	map, HttpServletRequest request) throws Exception {
-		String filePath = "C:\\Users\\KMK\\git\\HOTEL\\HOTEL\\src\\main\\webapp\\resources\\";
+		String filePath = "C:\\Users\\parks\\git\\HOTEL\\HOTEL\\src\\main\\webapp\\resources\\rooms\\";
 
-		//본인 경로로 변경하여 사용할 것!
+		//본인 경로로 변경하여 사용할 것!1
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 		
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
@@ -79,7 +75,7 @@ public class FileUtils2 { //파일을 특정 폴더에 저장하고 DB에 입력
 	//첨부파일 수정
 	public  List<Map<String, Object>> parseUpdateFileInfo(Map<String, Object>
 	map, HttpServletRequest request) throws Exception {
-		String filePath = "C:\\Users\\KMK\\git\\HOTEL\\HOTEL\\src\\main\\webapp\\resources\\";
+		String filePath = "C:\\Users\\parks\\git\\HOTEL\\HOTEL\\src\\main\\webapp\\resources\\facilities\\"; //성환 pc
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames();

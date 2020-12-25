@@ -31,7 +31,7 @@ public class SignUpController {
 	@Resource(name="MemberService")
 	private MemberService memberService;
 	
-	//회원 가입 폼 이동
+	//회원 가입 폼 이동  
 	@RequestMapping(value="/signUpTerms")
 	public ModelAndView SignUpForm1() throws Exception{
 		ModelAndView mv = new ModelAndView("/common/signUpTerms");
@@ -72,7 +72,7 @@ public class SignUpController {
 		return cnt;
 	}
 	
-	//이메일 인증-회원가입
+	//이메일 인증 (회원가입)
     @RequestMapping(value = "/emailAuth", produces = "application/json")
     // produces = "application/json": 요청에 대한 응답 형태로 json형식의 데이터를 원할 경우
     @ResponseBody
@@ -81,9 +81,12 @@ public class SignUpController {
         String joinCode = String.valueOf(ran);
         session.setAttribute("joinCode", joinCode);
  
-        String subject = "<HOTEL> 회원가입 인증 코드입니다.";
+        String subject = "Complete your sign up!";
         StringBuilder sb = new StringBuilder();
-        sb.append("귀하의 인증 코드는 " + joinCode + " 입니다.");
+        sb.append(" Please enter 5-digit code on the website to verify your email address as follows: "
+        			+ "<span style=\"color:blue;font-weight:bold;font-size:15px;\">"
+        			+ joinCode+"</span>");
+        
         return loginService.send(subject, sb.toString(), "1teampjt@gmail.com", MEM_EMAIL, null);
     }
     
